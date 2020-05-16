@@ -1,6 +1,7 @@
 (ns green-thumb-api.core
   (:require [compojure.api.sweet :as api]
             [green-thumb-api.routers.sunlight :refer [sunlight-router]]
+            [green-thumb-api.routers.water :refer [water-router]]
             [green-thumb-api.routers.plants :refer [plants-router]]))
 
 (def app
@@ -15,4 +16,5 @@
      :tags ["api"]
 
      plants-router
-     sunlight-router)))
+     sunlight-router
+     water-router)))
