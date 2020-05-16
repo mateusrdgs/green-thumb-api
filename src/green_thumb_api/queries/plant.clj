@@ -1,4 +1,4 @@
-(ns green-thumb-api.queries.plants)
+(ns green-thumb-api.queries.plant)
 
 (def get-all-plants-query
   "SELECT p.uuid as uuid, p.name as name, s.uuid as sunlight, w.uuid as water, t.uuid as toxic

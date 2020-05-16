@@ -1,15 +1,15 @@
-(ns green-thumb-api.routers.plants
+(ns green-thumb-api.routers.plant
   (:require
    [compojure.api.sweet :as api]
    [ring.util.http-response :as response]
    [schema.core :as s]
-   [green-thumb-api.schemas.plants :refer [Plant]]
-   [green-thumb-api.controllers.plants :refer [get-plants get-plant-by-uuid]]))
+   [green-thumb-api.schemas.plant :refer [Plant]]
+   [green-thumb-api.controllers.plant :refer [get-plants get-plant-by-uuid]]))
 
 (def plants-router
-  (api/context "/plants"
+  (api/context "/plant"
     []
-    :tags ["Plants"]
+    :tags ["Plant"]
 
     (api/GET "/"
       []

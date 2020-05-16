@@ -1,4 +1,4 @@
-(ns green-thumb-api.schemas.plants
+(ns green-thumb-api.schemas.plant
   (:require [schema.core :as s]))
 
 (s/defschema Plant
