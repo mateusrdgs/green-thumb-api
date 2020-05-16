@@ -9,7 +9,7 @@
 (def plants-router
   (api/context "/plants"
     []
-    :tags ["api"]
+    :tags ["Plants"]
 
     (api/GET "/"
       []
