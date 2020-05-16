@@ -1,21 +1,16 @@
 (ns green-thumb-api.controllers.plants
   (:require
-   [clojure.java.jdbc :as db]
+   [green-thumb-api.database.database :as database]
    [green-thumb-api.queries.plants :refer [get-all-plants-query get-plant-by-id-query]]))
 
-(def mysql-db
-  {:classname "com.mysql.cj.jdbc.Driver"
-   :subprotocol "mysql"
-   :dbtype "mysql"
-   :dbname "green_thumb"
-   :user "root"})
-
 (defn get-plants
+  "Get all plants"
   []
-  (let [plants (db/query mysql-db [get-all-plants-query])]
+  (let [plants (database/query [get-all-plants-query])]
     plants))
 
 (defn get-plant-by-uuid
+  "Get an specific plant based on uuid"
   [id]
-  (let [plant (db/query mysql-db [get-plant-by-id-query id])]
+  (let [plant (database/query [get-plant-by-id-query id])]
     (first plant)))
