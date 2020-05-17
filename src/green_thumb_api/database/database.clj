@@ -1,13 +1,15 @@
 (ns green-thumb-api.database.database
   (:require
-   [clojure.java.jdbc :as db]))
+   [clojure.java.jdbc :as db]
+   [environ.core :refer [env]]))
 
 (def mysql-db
-  {:classname "com.mysql.cj.jdbc.Driver"
-   :subprotocol "mysql"
-   :dbtype "mysql"
-   :dbname "green_thumb"
-   :user "root"})
+  {:classname (env :classname)
+   :subprotocol (env :subprotocol)
+   :dbtype (env :dbtype)
+   :dbname (env :dbname)
+   :user (env :user)
+   :password (env :password)})
 
 (defn query
   [query]

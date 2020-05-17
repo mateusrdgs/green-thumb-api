@@ -2,8 +2,8 @@
   (:require [compojure.api.sweet :as api]
             [green-thumb-api.routers.sunlight :refer [sunlight-router]]
             [green-thumb-api.routers.water :refer [water-router]]
-            [green-thumb-api.routers.toxic :refer [toxic-router]]
-            [green-thumb-api.routers.plant :refer [plants-router]]))
+            [green-thumb-api.routers.plant :refer [plants-router]]
+            [green-thumb-api.routers.toxic :refer [toxic-router]]))
 
 (def app
   (api/api
