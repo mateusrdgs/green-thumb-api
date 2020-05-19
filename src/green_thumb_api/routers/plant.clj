@@ -10,6 +10,12 @@
   (api/context "/plant"
     []
     :tags ["Plant"]
+    
+    (api/GET "/all"
+      []
+      :return [Plant]
+      :summary "Get all plants"
+      (response/ok (get-plants)))
 
     (api/GET "/:uuid"
       []
@@ -25,10 +31,4 @@
                      toxic :- s/Str]
       :return [Plant]
       :summary "Get a plant based on sunlight, water and toxic"
-      (response/ok (get-plant-by-filters sunlight water toxic)))
-
-      (api/GET "/all"
-        []
-        :return [Plant]
-        :summary "Get all plants"
-        (response/ok (get-plants)))))
+      (response/ok (get-plant-by-filters sunlight water toxic)))))
